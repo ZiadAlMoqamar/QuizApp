@@ -3,7 +3,7 @@ import './Question.dart';
 import './Answer.dart';
 
 class Quiz extends StatelessWidget {
-  final List<Map<String,Object>> questionsAndAnswers;
+  final List<Map<String, Object>> questionsAndAnswers;
   final int questionIndex;
   final Function incrementQuestionCounter;
   Quiz(
@@ -18,6 +18,7 @@ class Quiz extends StatelessWidget {
         children: <Widget>[
           Question(
               questionsAndAnswers[questionIndex]['questionText'] as String),
+          //... is a spreading operator for the list content
           ...(questionsAndAnswers[questionIndex]['answers']
                   as List<Map<String, Object>>)
               .map((answer) {
